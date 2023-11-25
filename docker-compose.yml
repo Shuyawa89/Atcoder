@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  atcoder-env:
+    # build section might still be left in the file if you want to rebuild the original Dockerfile in the future
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: atcoderenv
+    volumes:
+      - ./:/src/atcoder
+    command: /bin/bash
+    stdin_open: true
+    tty: true
